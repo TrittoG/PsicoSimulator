@@ -1,0 +1,247 @@
+[gd_scene load_steps=22 format=3 uid="uid://bkewkl3jt008w"]
+
+[ext_resource type="Script" uid="uid://kcou7o4qjf31" path="res://scripts/main.gd" id="1_bb450"]
+[ext_resource type="Texture2D" uid="uid://dl2fpu2hfck" path="res://assets/fondo2.png" id="2_nfivy"]
+[ext_resource type="Script" uid="uid://djm0mmfa8chsh" path="res://scripts/ClickableItem.gd" id="3_1nqs0"]
+[ext_resource type="Texture2D" uid="uid://cvj6j4rcuu3ca" path="res://assets/pintar.png" id="4_1iba3"]
+[ext_resource type="Texture2D" uid="uid://cwyhfw6hhqfix" path="res://assets/pc.png" id="5_yxlcp"]
+[ext_resource type="Texture2D" uid="uid://dghtnppgaaef1" path="res://assets/anotador.png" id="6_ebg2g"]
+[ext_resource type="Texture2D" uid="uid://cq72yk5tiyw3w" path="res://assets/fala.png" id="7_2ofn6"]
+[ext_resource type="Texture2D" uid="uid://cb6a8dycfd73t" path="res://assets/finalizar.png" id="8_xa025"]
+[ext_resource type="Texture2D" uid="uid://djxwnuv8t5ohs" path="res://assets/char1.png" id="9_36rkl"]
+[ext_resource type="Texture2D" uid="uid://drpjmw460fbe2" path="res://assets/char2.png" id="10_fs0b5"]
+[ext_resource type="Texture2D" uid="uid://b3xwrs0tbp4jq" path="res://assets/char3.png" id="11_ma7h6"]
+[ext_resource type="Texture2D" uid="uid://enfen2nw3c58" path="res://assets/char4.png" id="12_e2s0e"]
+[ext_resource type="Texture2D" uid="uid://cirxoq5ktmi8i" path="res://assets/char5.png" id="13_gsxep"]
+[ext_resource type="Texture2D" uid="uid://bsgggffiixexi" path="res://assets/char6.png" id="14_v0vrg"]
+[ext_resource type="Texture2D" uid="uid://hmn3n8d2x4mf" path="res://assets/char7.png" id="15_dg70y"]
+[ext_resource type="Texture2D" uid="uid://8h31fpepmw1e" path="res://assets/char8.png" id="16_pnhog"]
+[ext_resource type="Texture2D" uid="uid://bs3gujnkh745g" path="res://assets/char9.png" id="17_2c4at"]
+[ext_resource type="Texture2D" uid="uid://bq6pjijctmmc7" path="res://assets/char10.png" id="18_g6wdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgr22"]
+size = Vector2(91.125, 79.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trn2v"]
+size = Vector2(95.5625, 81.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03owx"]
+size = Vector2(94.5, 122)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bb450")
+
+[node name="fondo" type="Sprite2D" parent="."]
+position = Vector2(580, 325)
+scale = Vector2(0.750651, 0.632813)
+texture = ExtResource("2_nfivy")
+
+[node name="Pintar" type="Area2D" parent="."]
+script = ExtResource("3_1nqs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pintar"]
+position = Vector2(306, 559)
+scale = Vector2(0.107971, 0.107971)
+texture = ExtResource("4_1iba3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pintar"]
+position = Vector2(308, 559)
+shape = SubResource("RectangleShape2D_lgr22")
+
+[node name="Notebook" type="Area2D" parent="."]
+script = ExtResource("3_1nqs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Notebook"]
+position = Vector2(938, 560)
+scale = Vector2(0.107971, 0.107971)
+texture = ExtResource("5_yxlcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notebook"]
+position = Vector2(940, 561)
+shape = SubResource("RectangleShape2D_lgr22")
+
+[node name="Cuaderno" type="Area2D" parent="."]
+script = ExtResource("3_1nqs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cuaderno"]
+position = Vector2(85.3281, 555.328)
+scale = Vector2(0.124359, 0.124359)
+texture = ExtResource("6_ebg2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuaderno"]
+position = Vector2(84, 553)
+shape = SubResource("RectangleShape2D_trn2v")
+
+[node name="Hablar" type="Area2D" parent="."]
+script = ExtResource("3_1nqs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hablar"]
+position = Vector2(204, 559)
+scale = Vector2(0.10849, 0.10849)
+texture = ExtResource("7_2ofn6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hablar"]
+position = Vector2(204, 557)
+shape = SubResource("RectangleShape2D_trn2v")
+
+[node name="Diagnosticar" type="Area2D" parent="."]
+script = ExtResource("3_1nqs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Diagnosticar"]
+position = Vector2(578, 541)
+scale = Vector2(0.132813, 0.132813)
+texture = ExtResource("8_xa025")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diagnosticar"]
+position = Vector2(577, 541)
+shape = SubResource("RectangleShape2D_03owx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.135
+anchor_right = 0.324
+anchor_bottom = 0.318
+offset_left = 168.824
+offset_top = 78.52
+offset_right = 488.752
+offset_bottom = 179.936
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.312
+anchor_bottom = 0.351
+offset_right = 282.272
+offset_bottom = 74.78
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 183.0
+offset_right = 248.0
+offset_bottom = 214.0
+text = "Aceptar"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -488.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Empatia" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 32.0
+offset_right = -404.0
+offset_bottom = 59.0
+
+[node name="Energia" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 67.0
+offset_right = -410.0
+offset_bottom = 94.0
+
+[node name="SaludMental" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 103.0
+offset_right = -409.0
+offset_bottom = 130.0
+
+[node name="Concentracion" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 140.0
+offset_right = -410.0
+offset_bottom = 167.0
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 941.0
+offset_top = 12.0
+offset_right = -3.0
+offset_bottom = -582.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dia 1 - Paciente 1"
+
+[node name="Pacientes" type="Node2D" parent="."]
+
+[node name="Paciente1" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(645, 260)
+scale = Vector2(0.227539, 0.227539)
+texture = ExtResource("9_36rkl")
+
+[node name="Paciente2" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(766, 265)
+scale = Vector2(0.227539, 0.227539)
+texture = ExtResource("10_fs0b5")
+
+[node name="Paciente3" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(748, 258)
+scale = Vector2(0.227539, 0.227539)
+texture = ExtResource("11_ma7h6")
+
+[node name="Paciente4" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(694, 262)
+scale = Vector2(0.227539, 0.227539)
+texture = ExtResource("12_e2s0e")
+
+[node name="Paciente5" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(773, 252)
+scale = Vector2(0.175293, 0.175293)
+texture = ExtResource("13_gsxep")
+
+[node name="Paciente6" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(478, 277)
+scale = Vector2(0.169434, 0.169434)
+texture = ExtResource("14_v0vrg")
+
+[node name="Paciente7" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(342, 366)
+scale = Vector2(0.120605, 0.120605)
+texture = ExtResource("15_dg70y")
+
+[node name="Paciente8" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(645, 260)
+scale = Vector2(0.227539, 0.227539)
+texture = ExtResource("16_pnhog")
+
+[node name="Paciente9" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(669, 320)
+scale = Vector2(0.227539, 0.227539)
+texture = ExtResource("17_2c4at")
+
+[node name="Paciente10" type="Sprite2D" parent="Pacientes"]
+visible = false
+position = Vector2(519, 283)
+scale = Vector2(0.118652, 0.118652)
+texture = ExtResource("18_g6wdg")

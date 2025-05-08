@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://4pp6uk3yt04h"]
+
+[ext_resource type="Script" uid="uid://d0c0rexqm88ie" path="res://scripts/Exterior.gd" id="1_erpu3"]
+[ext_resource type="Texture2D" uid="uid://brasxbhifiq5g" path="res://assets/fuera.png" id="2_ly18i"]
+[ext_resource type="Script" uid="uid://djm0mmfa8chsh" path="res://scripts/ClickableItem.gd" id="3_p2o1q"]
+[ext_resource type="Texture2D" uid="uid://ceklo3t5wwgb2" path="res://assets/salir3.png" id="4_nltdh"]
+[ext_resource type="Texture2D" uid="uid://b2abgu0qjgw8k" path="res://assets/casino2.png" id="5_x7vtf"]
+[ext_resource type="Texture2D" uid="uid://btg6k6pi5nq1m" path="res://assets/bar.png" id="6_p0hsf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2nse"]
+size = Vector2(70.1406, 63.2344)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obu6x"]
+size = Vector2(370.25, 254)
+
+[node name="Exterior" type="Node2D"]
+script = ExtResource("1_erpu3")
+
+[node name="fondoExterior" type="Sprite2D" parent="."]
+position = Vector2(575.375, 378.25)
+scale = Vector2(0.76123, 0.76123)
+texture = ExtResource("2_ly18i")
+
+[node name="Volver" type="Area2D" parent="."]
+script = ExtResource("3_p2o1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Volver"]
+position = Vector2(70, 592)
+scale = Vector2(0.0758209, 0.0766003)
+texture = ExtResource("4_nltdh")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Volver"]
+position = Vector2(71, 591)
+shape = SubResource("RectangleShape2D_l2nse")
+
+[node name="Casino" type="Area2D" parent="."]
+script = ExtResource("3_p2o1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Casino"]
+position = Vector2(329, 369)
+scale = Vector2(0.237035, 0.239472)
+texture = ExtResource("5_x7vtf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Casino"]
+position = Vector2(327.875, 368)
+shape = SubResource("RectangleShape2D_obu6x")
+
+[node name="Bar" type="Area2D" parent="."]
+script = ExtResource("3_p2o1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bar"]
+position = Vector2(834, 363)
+scale = Vector2(0.266304, 0.271103)
+texture = ExtResource("6_p0hsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar"]
+position = Vector2(832, 357)
+shape = SubResource("RectangleShape2D_obu6x")

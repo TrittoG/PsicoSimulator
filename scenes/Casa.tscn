@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://crxigerqs0sbi"]
+
+[ext_resource type="Script" uid="uid://deo21mts3r28g" path="res://scripts/Casa.gd" id="1_jfru6"]
+[ext_resource type="Texture2D" uid="uid://bj7pka8t6yqnt" path="res://assets/casa3.png" id="2_ja6p8"]
+[ext_resource type="Script" uid="uid://djm0mmfa8chsh" path="res://scripts/ClickableItem.gd" id="3_82og1"]
+[ext_resource type="Texture2D" uid="uid://ceklo3t5wwgb2" path="res://assets/salir3.png" id="4_eycwg"]
+[ext_resource type="Texture2D" uid="uid://d2p31x2eajx6g" path="res://assets/volver2.png" id="5_te25k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l5o0"]
+size = Vector2(70.2813, 58.4688)
+
+[node name="Casa" type="Node2D"]
+script = ExtResource("1_jfru6")
+
+[node name="fondoCasa" type="Sprite2D" parent="."]
+position = Vector2(577.289, 321.656)
+scale = Vector2(0.762644, 0.649109)
+texture = ExtResource("2_ja6p8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.135
+anchor_right = 0.324
+anchor_bottom = 0.318
+offset_left = 168.824
+offset_top = 78.52
+offset_right = 488.752
+offset_bottom = 179.936
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.312
+anchor_bottom = 0.351
+offset_right = 282.272
+offset_bottom = 74.78
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 183.0
+offset_right = 248.0
+offset_bottom = 214.0
+text = "Aceptar"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -488.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Empatia" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 32.0
+offset_right = -404.0
+offset_bottom = 59.0
+
+[node name="Energia" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 67.0
+offset_right = -410.0
+offset_bottom = 94.0
+
+[node name="SaludMental" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 103.0
+offset_right = -409.0
+offset_bottom = 130.0
+
+[node name="Concentracion" type="ProgressBar" parent="CanvasLayer2/Control"]
+layout_mode = 2
+offset_left = -638.0
+offset_top = 140.0
+offset_right = -410.0
+offset_bottom = 167.0
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="CanvasLayer2"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/CanvasLayer3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 941.0
+offset_top = 12.0
+offset_right = -3.0
+offset_bottom = -582.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dia 1 - Paciente 1"
+
+[node name="Salir" type="Area2D" parent="."]
+script = ExtResource("3_82og1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Salir"]
+position = Vector2(1056, 477)
+scale = Vector2(0.0758209, 0.0766003)
+texture = ExtResource("4_eycwg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Salir"]
+position = Vector2(1057, 477)
+shape = SubResource("RectangleShape2D_5l5o0")
+
+[node name="Volver" type="Area2D" parent="."]
+script = ExtResource("3_82og1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Volver"]
+position = Vector2(1058, 577)
+scale = Vector2(0.077774, 0.0785735)
+texture = ExtResource("5_te25k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Volver"]
+position = Vector2(1058, 578)
+shape = SubResource("RectangleShape2D_5l5o0")
