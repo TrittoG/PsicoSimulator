@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmkv83bxm2dlv"]
+
+[ext_resource type="Script" uid="uid://crs3j35llxrsb" path="res://scripts/SlotMachine.gd" id="1_7r8tb"]
+[ext_resource type="Texture2D" uid="uid://bcpaqsnwtdhjx" path="res://assets/cabinet.png" id="2_b6tw1"]
+[ext_resource type="Texture2D" uid="uid://cvdtjyr15ac05" path="res://assets/casinoFondo.png" id="2_fir66"]
+[ext_resource type="Texture2D" uid="uid://b6dharg5vemj3" path="res://assets/diamante.png" id="3_gx68h"]
+[ext_resource type="Texture2D" uid="uid://dr3gjugjmy7qq" path="res://assets/siete.png" id="4_fir66"]
+[ext_resource type="Script" uid="uid://djm0mmfa8chsh" path="res://scripts/ClickableItem.gd" id="6_mf0q4"]
+[ext_resource type="Texture2D" uid="uid://ceklo3t5wwgb2" path="res://assets/salir3.png" id="7_en4nw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueo72"]
+size = Vector2(70.1406, 63.2344)
+
+[node name="SlotMachine" type="Node2D"]
+script = ExtResource("1_7r8tb")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(-497, -416)
+scale = Vector2(2.17432, 2.17432)
+texture = ExtResource("2_fir66")
+
+[node name="Cabinet" type="Sprite2D" parent="."]
+position = Vector2(595, 324)
+scale = Vector2(0.632813, 0.632813)
+texture = ExtResource("2_b6tw1")
+
+[node name="Reels" type="Node2D" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Reels"]
+offset_left = 417.0
+offset_top = 159.0
+offset_right = 664.0
+offset_bottom = 275.0
+alignment = 1
+
+[node name="Reel1" type="TextureRect" parent="Reels/HBoxContainer"]
+layout_mode = 2
+localize_numeral_system = false
+texture = ExtResource("3_gx68h")
+expand_mode = 2
+
+[node name="Reel2" type="TextureRect" parent="Reels/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_fir66")
+expand_mode = 2
+
+[node name="Reel3" type="TextureRect" parent="Reels/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_gx68h")
+expand_mode = 2
+
+[node name="SpinButton" type="Button" parent="."]
+offset_left = 542.0
+offset_top = 352.0
+offset_right = 637.0
+offset_bottom = 383.0
+text = "GIRAR
+"
+
+[node name="Volver" type="Area2D" parent="."]
+script = ExtResource("6_mf0q4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Volver"]
+position = Vector2(70, 592)
+scale = Vector2(0.0758209, 0.0766003)
+texture = ExtResource("7_en4nw")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Volver"]
+position = Vector2(71, 591)
+shape = SubResource("RectangleShape2D_ueo72")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer3"]
+offset_left = 900.0
+offset_top = 24.0
+offset_right = 1141.0
+offset_bottom = 170.0

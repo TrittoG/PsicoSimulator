@@ -6,11 +6,6 @@ extends Node2D
 @onready var area_hablar  : Area2D = $Hablar
 @onready var area_diagnosticar  : Area2D = $Diagnosticar
 
-#CASA
-@onready var area_salir  : Area2D = $Salir
-
-#FUERA
-@onready var area_volver  : Area2D = $Volver
 
 @onready var barras = {
 	"concentracion": $CanvasLayer2/Control/Concentracion,
@@ -61,6 +56,7 @@ func _on_dialog_closed():
 		barras["concentracion"].value += 5
 	elif last_item == "diagnosticar":
 			barras["empatia"].value += 10
+			GameState.add_money(100)
 			get_tree().change_scene_to_file("res://scenes/Casa.tscn")
 	elif last_item == "laptop":
 			barras["saludmental"].value += 10

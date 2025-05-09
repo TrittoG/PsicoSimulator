@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce1a57u3gcpj4"]
+
+[ext_resource type="Texture2D" uid="uid://dgvbbr5cxejyx" path="res://assets/fondoBar.png" id="1_5s8yr"]
+
+[node name="InteriorBar" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(582.875, 389.25)
+scale = Vector2(0.769043, 0.769043)
+texture = ExtResource("1_5s8yr")
